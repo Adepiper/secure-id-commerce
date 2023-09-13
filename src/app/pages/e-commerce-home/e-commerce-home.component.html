@@ -1,1 +1,44 @@
-<p>e-commerce-home works!</p>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-lg-3 pt-1" *ngFor="let product of products$ | async">
+      <div class="box-shadow">
+        <div class="card">
+          <img
+            class="img-fluid"
+            style="height: 200px"
+            [src]="product.productImageUrl"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.productName }}</h5>
+            <p class="card-text">
+              <span class="text-danger fw-semibold me-2"
+                >${{ product.productPrice }}</span
+              >
+            </p>
+
+            <div class="row">
+              <div class="col-4">
+                <i
+                  class="fa-solid fa-star-half-stroke m-0"
+                  style="color: #f1f50f"
+                ></i>
+                <span class="text-muted">(21)</span>
+              </div>
+              <div class="col-8 text-end">
+                <button
+                  class="btn"
+                  [class]="itemInCart(product) ? 'btn-danger' : 'btn-success'"
+                  (click)="addTocart(product)"
+                >
+                  {{ itemInCart(product) ? "Remove from" : "Add To" }} Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
