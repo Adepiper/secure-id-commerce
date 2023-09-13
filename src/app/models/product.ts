@@ -10,4 +10,5 @@ export interface Product {
   categoryId: number;
   productImageUrl: string;
   categoryName: string;
+  quantity: number;
 }

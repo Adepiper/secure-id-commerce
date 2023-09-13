@@ -27,4 +27,7 @@ export class ProductService {
 
     this.cartItems.next(items);
   }
+  clearAllCart() {
+    this.cartItems.next([]);
+  }
 }
