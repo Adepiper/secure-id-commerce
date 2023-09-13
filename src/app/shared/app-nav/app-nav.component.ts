@@ -13,14 +13,14 @@ import { Router } from '@angular/router';
 })
 export class AppNavComponent implements OnInit {
   cartItems: Product[] = [];
-  subTotal = 0;
+  subTotal = this.productService.subTotal();
 
   constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.productService.cartItems$.subscribe((data) => {
       this.cartItems = data;
-      this.subTotal = data.reduce((prev, acc) => prev + acc.productPrice, 0);
+      this.subTotal = this.productService.subTotal();
     });
   }
 

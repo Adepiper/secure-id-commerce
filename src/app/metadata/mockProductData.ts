@@ -14,7 +14,7 @@ export const products: Product[] = [
     productImageUrl:
       'https://api.mobilaty.com/storage/uploads//D4wCz4-1653473013.png',
     categoryName: 'Mobile',
-    quantity: 0,
+    quantity: 1,
   },
   {
     productId: 38,
@@ -29,7 +29,7 @@ export const products: Product[] = [
     productImageUrl:
       'https://madastore.ps/storage/media/t5DKkodgSm17idbcLT6lgt9iFMimdWkN75a8GOkw.png',
     categoryName: 'Mobile',
-    quantity: 0,
+    quantity: 1,
   },
   {
     productId: 33,
@@ -44,7 +44,7 @@ export const products: Product[] = [
     productImageUrl:
       'https://images.samsung.com/is/image/samsung/p6pim/eg/2302/gallery/eg-galaxy-s23-s918-sm-s918bzkcmea-534862315?$650_519_PNG$',
     categoryName: 'Mobile',
-    quantity: 0,
+    quantity: 1,
   },
   {
     productId: 35,
@@ -59,7 +59,7 @@ export const products: Product[] = [
     productImageUrl:
       'https://btech.com/cdn-cgi/image/quality=50,format=auto/media/catalog/product/cache/ca8e5b670e64ec62901c1af623a5efc4/5/4/54f7c15cc224f3c29484212d3a2e2ecbe5532382631082964cf124557bb3daa0.jpeg',
     categoryName: 'Mobile',
-    quantity: 0,
+    quantity: 1,
   },
   {
     productId: 37,
@@ -74,6 +74,6 @@ export const products: Product[] = [
     productImageUrl:
       'https://api.mobilaty.com/storage/uploads/E8jtPC-1625492659.jpg',
     categoryName: 'Mobile',
-    quantity: 0,
+    quantity: 1,
   },
 ];

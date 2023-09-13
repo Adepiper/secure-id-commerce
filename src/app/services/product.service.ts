@@ -20,6 +20,21 @@ export class ProductService {
     this.cartItems.next(items);
   }
 
+  updateCartItemQuantity(cart: Product, tag: 'add' | 'minus') {
+    const carts = [...this.cartItems.value];
+
+    const indexofCart = carts.findIndex(
+      (data) => data.productId === cart.categoryId
+    );
+    const item = {
+      ...cart,
+      quantity: tag === 'add' ? cart.quantity++ : cart.quantity--,
+    };
+    carts[indexofCart] = item;
+
+    this.cartItems.next(carts);
+  }
+
   removeFromCart(cart: Product) {
     const items = [...this.cartItems.value].filter(
       (item) => item.productId !== cart.productId
@@ -29,5 +44,12 @@ export class ProductService {
   }
   clearAllCart() {
     this.cartItems.next([]);
+  }
+
+  subTotal() {
+    return this.cartItems.value.reduce(
+      (prev, acc) => prev + acc.productPrice * acc.quantity,
+      0
+    );
   }
 }
