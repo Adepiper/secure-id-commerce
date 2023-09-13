@@ -54,7 +54,7 @@
                   </div>
                 </div>
                 <div class="row pt-1" *ngFor="let cart of cartItems">
-                  <div class="col-4">
+                  <div class="col-3">
                     <img
                       class="img-fluid"
                       style="height: 30px; border-radius: 50%"
@@ -66,10 +66,24 @@
                     {{ cart.productName }}
                   </div>
                   <div class="col-2">
-                    {{ 1 }}
+                    <div class="d-flex align-items-center">
+                      <button
+                        (click)="updateProductItem(cart, 'minus')"
+                        [disabled]="cart.quantity === 1"
+                      >
+                        -
+                      </button>
+                      {{ cart.quantity }}
+                      <button (click)="updateProductItem(cart, 'add')">
+                        +
+                      </button>
+                    </div>
                   </div>
                   <div class="col-2 text-end">
                     {{ cart.productPrice | currency : "₦" }}
+                  </div>
+                  <div class="col-2 text-end">
+                    <button class="btn btn-danger">Remove</button>
                   </div>
                 </div>
 

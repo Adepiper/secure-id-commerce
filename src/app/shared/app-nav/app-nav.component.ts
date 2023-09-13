@@ -31,4 +31,8 @@ export class AppNavComponent implements OnInit {
   clearCartItems() {
     this.productService.clearAllCart();
   }
+
+  updateProductItem(cart: Product, tag: 'add' | 'minus') {
+    this.productService.updateCartItemQuantity(cart, tag);
+  }
 }
