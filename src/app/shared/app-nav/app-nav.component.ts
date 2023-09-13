@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-app-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './app-nav.component.html',
   styleUrls: ['./app-nav.component.scss'],
 })
 export class AppNavComponent implements OnInit {
   cartItems: Product[] = [];
-  subTotal = this.productService.subTotal();
+  subTotal = 0;
 
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -34,5 +34,9 @@ export class AppNavComponent implements OnInit {
 
   updateProductItem(cart: Product, tag: 'add' | 'minus') {
     this.productService.updateCartItemQuantity(cart, tag);
+  }
+
+  removeItem(cart: Product) {
+    this.productService.removeFromCart(cart);
   }
 }

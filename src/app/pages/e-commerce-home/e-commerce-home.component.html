@@ -13,9 +13,9 @@
           <div class="card-body">
             <h5 class="card-title">{{ product.productName }}</h5>
             <p class="card-text">
-              <span class="text-danger fw-semibold me-2"
-                >${{ product.productPrice }}</span
-              >
+              <span class="text-danger fw-semibold me-2">{{
+                product.productPrice | currency : "₦"
+              }}</span>
             </p>
 
             <div class="row">

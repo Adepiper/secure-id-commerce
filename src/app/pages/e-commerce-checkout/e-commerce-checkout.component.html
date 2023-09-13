@@ -24,13 +24,22 @@
               {{ cart.productName }}
             </div>
             <div class="col-2">
-              {{ cart.quantity }}
+              <div class="d-flex align-items-center">
+                <button
+                  (click)="updateProductItem(cart, 'minus')"
+                  [disabled]="cart.quantity === 1"
+                >
+                  -
+                </button>
+                {{ cart.quantity }}
+                <button (click)="updateProductItem(cart, 'add')">+</button>
+              </div>
             </div>
             <div class="col-2 text-end">
-              {{ cart.productPrice }}
+              {{ cart.productPrice | currency : "₦" }}
             </div>
             <div class="col-2 text-end">
-              <button class="btn btn-sm btn-danger" (click)="removeCart(cart)">
+              <button class="btn btn-sm btn-danger" (click)="removeItem(cart)">
                 Remove
               </button>
             </div>
@@ -48,17 +57,21 @@
             <div class="col-2"></div>
             <div class="col-4">
               <div class="Subtotal">Sub-Total</div>
-              <div><small> 2 items</small></div>
+              <div>
+                <small> {{ cartItems.length }} items</small>
+              </div>
             </div>
             <div class="col-4 text-end">
-              <strong> ${{ subTotal }}</strong>
+              <strong> {{ subTotal | currency : "₦" }}</strong>
             </div>
           </div>
           <div class="row">
-            <div class="col-12 text-center">
-              <button class="btn btn-lg btn-success" (click)="checkout()">
-                Make Sale
-              </button>
+            <div class="col-12 text-right">
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-lg btn-success" (click)="checkout()">
+                  Make Payment
+                </button>
+              </div>
             </div>
           </div>
         </ng-container>

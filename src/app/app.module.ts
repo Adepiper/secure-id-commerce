@@ -8,7 +8,11 @@ import { ECommerceHomeComponent } from './pages/e-commerce-home/e-commerce-home.
 import { ECommerceCheckoutComponent } from './pages/e-commerce-checkout/e-commerce-checkout.component';
 
 @NgModule({
-  declarations: [AppComponent, ECommerceHomeComponent, ECommerceCheckoutComponent],
+  declarations: [
+    AppComponent,
+    ECommerceHomeComponent,
+    ECommerceCheckoutComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, AppNavComponent],
   providers: [],
   bootstrap: [AppComponent],
